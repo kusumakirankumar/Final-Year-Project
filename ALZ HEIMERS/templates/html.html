@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <title>Alzheimer Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css.css') }}"> 
+</head>
+<body>
+    <div class="container">
+    <h1>ALZHEIMER PREDICTOR</h1>
+        <hr>
+        <div class="form-wrapper">
+            <form action="{{ url_for('predict')}}" method="post">
+                <div class="form-item">
+                    <label for="fullname">MR DELAY:</label>
+                    <input type="text" name="MR Delay	" placeholder="MR Delay" required="required" />
+                </div>
+
+                <div class="form-item">
+                    <label for="fullname">MALE/FEMALE:</label>
+                    <input type="text" name="M/F" placeholder="M/F" required="required" />
+                </div>
+
+				<div class="form-item">
+                    <label for="fullname">HAND:</label>
+                    <input type="text" name="Hand" placeholder="Hand"  required="required" />
+                </div>
+
+                <div class="form-item">
+                    <label for="fullname">AGE:</label>
+                    <input type="text" name="Age" placeholder="Age" required="required" />
+                </div>
+
+                <div class="form-item">
+                    <label for="fullname">EDUCATION:</label>
+                    <input type="text" name="EDUC" placeholder="EDUCATION" required="required" />
+                </div>
+
+                <div class="form-item">
+                    <label for="fullname">SES:</label>
+                    <input type="text" name="SES" placeholder="SES" required="required" />
+                </div>
+
+                <div class="form-item">
+                    <label for="fullname">MMSE:</label>
+                    <input type="text" name="MMSE" placeholder="MMSE" required="required" />
+                </div>
+
+                <div class="form-item">
+                    <label for="fullname">CDR:</label>
+                    <input type="text" name="CDR" placeholder="CDR" required="required" />
+                </div>
+
+                <div class="form-item">
+                    <label for="fullname">eTIV:</label>
+                    <input type="text" name="eTIV" placeholder="eTIV" required="required" />
+                </div>
+
+                <div class="form-item">
+                    <label for="fullname">nWBV:</label>
+                    <input type="text" name="nWBV" placeholder="nWBV" required="required" />
+                </div>
+
+                <div class="form-item">
+                    <label for="fullname">ASF:</label>
+                    <input type="text" name="ASF" placeholder="ASF" required="required" />
+                </div>
+
+                <div class="form-item">
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   &nbsp;<button class="submit" type="submit" onclick="submit()">PREDICT</button>
+                </div>
+                <br>
+                <br>
+                <div class="form-item">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <h1>{{ prediction_text }}</h1>
+                </div>
+            </form>
+           
+        </div>
+    </div>
+</body>
+</html>
